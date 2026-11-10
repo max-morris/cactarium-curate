@@ -1,0 +1,22 @@
+# Curated manifest for et/silo: https://github.com/EinsteinToolkit/ExternalLibraries-Silo
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "silo"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/Silo, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the Silo library; see https://github.com/astro-informatics/Silo"
+"""
+# license: that of the library this thorn builds, Silo 4.11.1 (dist/silo-4.11.1.tar), whose
+# COPYRIGHT is the 3-clause BSD license (with LLNL's additional disclaimer). The repo itself has
+# no LICENSE or COPYING file at ET_2026_05_v0.
+license = "BSD-3-Clause"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-Silo"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["Silo"]

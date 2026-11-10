@@ -1,0 +1,22 @@
+# Curated manifest for et/spacetimex: https://github.com/EinsteinToolkit/SpacetimeX
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "spacetimex"
+owners = ["et"]
+description = """
+SpacetimeX, a collection of thorns that prepare initial data for, evolve and analyze the spacetime metric, built on CarpetX: Z4c, the CarpetX ports of AHFinderDirect, SphericalSurface, Multipole and PunctureTracker, NewRadX, Weyl, TwoPuncturesX and more. For matter evolution see AsterX.
+"""
+# license: from the repo's root LICENSE.md at ET_2026_05_v0 (e89fe1d): the GNU LGPL version 3
+# text with no 'or later' grant, and the README states none, so LGPL-3.0-only for the whole
+# package. Thorns that carry a different license: AHFinderDirect and SphericalSurface have their
+# own COPYING, the GNU GPL version 2 text.
+license = "LGPL-3.0-only"
+homepage = "https://github.com/EinsteinToolkit/SpacetimeX"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "SpacetimeX"

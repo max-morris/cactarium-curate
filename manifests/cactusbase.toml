@@ -1,0 +1,20 @@
+# Curated manifest for et/cactusbase: https://bitbucket.org/cactuscode/cactusbase
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "cactusbase"
+owners = ["et"]
+description = """
+CactusBase, the Cactus arrangement of base thorns most simulations use: boundary conditions (Boundary), coordinates (CartGrid3D, CoordBase), symmetries (SymBase), time stepping (Time), initial-data control (InitBase), I/O infrastructure (IOUtil, IOASCII, IOBasic) and Fortran support.
+"""
+# license: left unset. At ET_2026_05_v0 (49a9d71), the repo has no LICENSE or COPYING file at
+# its root; 1 of its 10 thorns carries its own: the GNU LGPL version 2 text (1); the thorn
+# READMEs say 'LGPL'; so no single SPDX identifier covers the repo.
+homepage = "https://bitbucket.org/cactuscode/cactusbase"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "CactusBase"

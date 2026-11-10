@@ -1,0 +1,22 @@
+# Curated manifest for et/adios2: https://github.com/EinsteinToolkit/ExternalLibraries-ADIOS2
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "adios2"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/ADIOS2, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the ADIOS2 library; see https://csmd.ornl.gov/software/adios2"
+"""
+# license: that of the library this thorn builds, ADIOS2 2.10.2 (dist/ADIOS2-2.10.2.tar), whose
+# LICENSE is the Apache License 2.0. The repo itself has no LICENSE or COPYING file at
+# ET_2026_05_v0.
+license = "Apache-2.0"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-ADIOS2"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["ADIOS2"]

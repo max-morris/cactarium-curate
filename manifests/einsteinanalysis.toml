@@ -1,0 +1,21 @@
+# Curated manifest for et/einsteinanalysis: https://bitbucket.org/einsteintoolkit/einsteinanalysis
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "einsteinanalysis"
+owners = ["et"]
+description = """
+EinsteinAnalysis, the Einstein Toolkit arrangement of spacetime analysis thorns: apparent and event horizon finders (AHFinderDirect, AHFinder, EHFinder, ET_BHaHAHA), quasi-local measures, multipole decomposition, Psi4 (WeylScal4), ADM mass and analysis, outflow and hydro analysis, and the puncture tracker.
+"""
+# license: left unset. At ET_2026_05_v0 (edd7fe6), the repo has no LICENSE or COPYING file at
+# its root; 5 of its 15 thorns carry its own: a BSD 2-Clause license (1); the GNU GPL version 2
+# text (4); the thorn READMEs say 'BSD 2-Clause', 'GPLv2+', 'LGPL', 'LGPLv2+'; so no single SPDX
+# identifier covers the repo.
+homepage = "https://bitbucket.org/einsteintoolkit/einsteinanalysis"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "EinsteinAnalysis"

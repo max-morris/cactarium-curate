@@ -1,0 +1,24 @@
+# Curated manifest for et/openpmd: https://github.com/EinsteinToolkit/ExternalLibraries-openPMD
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "openpmd"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/openPMD, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: ""
+"""
+# license: that of the library this thorn builds, openPMD-api 0.16.1
+# (dist/openPMD-api-0.16.1.tar): COPYING.LESSER is the GNU LGPL version 3 and the source files
+# grant 'version 3 of the License, or (at your option) any later version' (the nlohmann-json
+# 3.12.0 and toml11 4.2.0 it also bundles are MIT). The repo itself has no LICENSE or COPYING
+# file at ET_2026_05_v0.
+license = "LGPL-3.0-or-later"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-openPMD"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["openPMD"]

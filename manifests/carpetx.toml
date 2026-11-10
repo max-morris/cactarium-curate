@@ -1,0 +1,21 @@
+# Curated manifest for et/carpetx: https://github.com/EinsteinToolkit/CarpetX
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "carpetx"
+owners = ["et"]
+description = """
+CarpetX, a Cactus driver based on AMReX, a software framework for block-structured adaptive mesh refinement, intended for the Einstein Toolkit; with its arrangement of infrastructure (Loop, Arith, ODESolvers, BoxInBox, ...) and test thorns. CarpetX is ready for production.
+"""
+# license: from the repo's root LICENSE.md at ET_2026_05_v0 (2bb7f9b): the GNU LGPL version 3
+# text with no 'or later' grant, so LGPL-3.0-only (as confirmed for this registry). No thorn
+# carries a license file of its own.
+license = "LGPL-3.0-only"
+homepage = "https://github.com/EinsteinToolkit/CarpetX"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "CarpetX"

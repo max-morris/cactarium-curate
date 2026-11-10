@@ -1,0 +1,22 @@
+# Curated manifest for et/einsteininitialdata: https://bitbucket.org/einsteintoolkit/einsteininitialdata
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "einsteininitialdata"
+owners = ["et"]
+description = """
+EinsteinInitialData, the Einstein Toolkit arrangement of initial data thorns: TwoPunctures and TwoPuncturesX (binary black holes), TOVSolver and TOVola (neutron stars), the Meudon (LORENE) readers, exact solutions, Hydro_RNSID, NoExcision and more.
+"""
+# license: left unset. At ET_2026_05_v0 (fee29aa), the repo has no LICENSE or COPYING file at
+# its root; 9 of its 21 thorns carry its own: a BSD 2-Clause license (1); a license text (You
+# can use this code under the GPL Gene...) (2); the GNU GPL version 2 text (6); the thorn
+# READMEs say 'BSD-2', 'GPL', 'GPLv2+', 'LGPL', 'LGPLv2+'; so no single SPDX identifier covers
+# the repo.
+homepage = "https://bitbucket.org/einsteintoolkit/einsteininitialdata"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "EinsteinInitialData"

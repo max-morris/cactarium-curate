@@ -1,0 +1,20 @@
+# Curated manifest for et/einsteinbase: https://bitbucket.org/einsteintoolkit/einsteinbase
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "einsteinbase"
+owners = ["et"]
+description = """
+EinsteinBase, the Einstein Toolkit arrangement of base thorns that define the shared variables of relativistic simulations: ADMBase (metric and extrinsic curvature), HydroBase (matter), TmunuBase (stress-energy), CoordGauge, StaticConformal, EOS_Base, Constants and the deprecated ADMCoupling and ADMMacros.
+"""
+# license: left unset. At ET_2026_05_v0 (db5777d), the repo has no LICENSE or COPYING file at
+# its root; 1 of its 10 thorns carries its own: the GNU GPL version 2 text (1); the thorn
+# READMEs say 'GPLv2+', 'LGPL'; so no single SPDX identifier covers the repo.
+homepage = "https://bitbucket.org/einsteintoolkit/einsteinbase"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "EinsteinBase"

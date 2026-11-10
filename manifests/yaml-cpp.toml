@@ -1,0 +1,22 @@
+# Curated manifest for et/yaml-cpp: https://github.com/EinsteinToolkit/ExternalLibraries-yaml_cpp
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "yaml-cpp"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/yaml_cpp, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the yaml-cpp library; see https://github.com/astro-informatics/yaml-cpp"
+"""
+# license: that of the library this thorn builds, yaml-cpp 0.6.3 (dist/yaml-cpp-0.6.3.tar),
+# whose LICENSE is the MIT license. The repo itself has no LICENSE or COPYING file at
+# ET_2026_05_v0.
+license = "MIT"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-yaml_cpp"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["yaml_cpp"]

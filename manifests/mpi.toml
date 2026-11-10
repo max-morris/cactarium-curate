@@ -1,0 +1,23 @@
+# Curated manifest for et/mpi: https://github.com/EinsteinToolkit/ExternalLibraries-MPI
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "mpi"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/MPI, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the OpenMPI library; see http://www.open-mpi.org/."
+"""
+# license: that of the library this thorn builds, Open MPI 4.0.6 (dist/openmpi-4.0.6.tar.gz),
+# whose LICENSE is the license SPDX lists as BSD-3-Clause-Open-MPI. This is the MPI the thorn
+# builds when asked to; pointed at a system MPI it uses whatever implementation that is, under
+# that one's license. The repo itself has no LICENSE or COPYING file at ET_2026_05_v0.
+license = "BSD-3-Clause-Open-MPI"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-MPI"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["MPI"]

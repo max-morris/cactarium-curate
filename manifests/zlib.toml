@@ -1,0 +1,22 @@
+# Curated manifest for et/zlib: https://github.com/EinsteinToolkit/ExternalLibraries-zlib
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "zlib"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/zlib, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the zlib library; see http://www.zlib.net/"
+"""
+# license: that of the library this thorn builds, zlib 1.2.8 (dist/zlib-1.2.8.tar.gz), under the
+# zlib license (its README and zlib.h). The repo itself has no LICENSE or COPYING file at
+# ET_2026_05_v0.
+license = "Zlib"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-zlib"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["zlib"]

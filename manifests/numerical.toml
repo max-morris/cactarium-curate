@@ -1,0 +1,20 @@
+# Curated manifest for et/numerical: https://bitbucket.org/cactuscode/numerical
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "numerical"
+owners = ["et"]
+description = """
+Numerical, the Cactus arrangement holding AEILocalInterp, the local interpolator (Lagrange and Hermite polynomial interpolation) many analysis thorns use.
+"""
+# license: left unset. At ET_2026_05_v0 (535f597), the repo has no LICENSE or COPYING file at
+# its root; 1 of its 1 thorns carries its own: the GNU GPL version 2 text (1); so no single SPDX
+# identifier covers the repo.
+homepage = "https://bitbucket.org/cactuscode/numerical"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "Numerical"

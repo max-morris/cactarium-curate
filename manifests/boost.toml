@@ -1,0 +1,22 @@
+# Curated manifest for et/boost: https://github.com/EinsteinToolkit/ExternalLibraries-Boost
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "boost"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/Boost, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute Boost; see http://www.boost.org/."
+"""
+# license: that of the library this thorn builds, Boost 1.84.0
+# (dist/boost_1_84_0-stripped.tar.gz), under the Boost Software License 1.0 (LICENSE_1_0.txt).
+# The repo itself has no LICENSE or COPYING file at ET_2026_05_v0.
+license = "BSL-1.0"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-Boost"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["Boost"]

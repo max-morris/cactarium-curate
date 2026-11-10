@@ -1,0 +1,22 @@
+# Curated manifest for et/petsc: https://github.com/EinsteinToolkit/ExternalLibraries-PETSc
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "petsc"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/PETSc, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the PETSc library; see http://www.mcs.anl.gov/petsc."
+"""
+# license: that of the library this thorn builds, PETSc 3.23.4 (dist/petsc-3.23.4.tar.gz), whose
+# LICENSE is the 2-clause BSD license. The repo itself has no LICENSE or COPYING file at
+# ET_2026_05_v0.
+license = "BSD-2-Clause"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-PETSc"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["PETSc"]

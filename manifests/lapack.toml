@@ -1,0 +1,22 @@
+# Curated manifest for et/lapack: https://github.com/EinsteinToolkit/ExternalLibraries-LAPACK
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "lapack"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/LAPACK, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the Linear Algebra Package (LAPACK); see http://netlib.org/lapack/."
+"""
+# license: that of the library this thorn builds, reference LAPACK 3.12.0
+# (dist/lapack-3.12.0.tgz), whose LICENSE is the modified BSD license SPDX lists as
+# BSD-3-Clause-Open-MPI. The repo itself has no LICENSE or COPYING file at ET_2026_05_v0.
+license = "BSD-3-Clause-Open-MPI"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-LAPACK"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["LAPACK"]

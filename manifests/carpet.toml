@@ -1,0 +1,23 @@
+# Curated manifest for et/carpet: https://github.com/einsteintoolkit/Carpet
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "carpet"
+owners = ["et"]
+description = """
+Carpet, the arrangement that provides a parallel adaptive mesh refinement driver for Cactus, with its I/O, reduction, interpolation, regridding and test thorns.
+"""
+# license: from the repo's root COPYING at ET_2026_05_v0 (6ddf4c7): the GNU GPL version 2 text
+# with no 'or (at your option) any later version' grant, and the arrangement README states none,
+# so GPL-2.0-only for the whole package. Thorns that say otherwise: most thorn READMEs say
+# 'GPLv2+'; CarpetIONirvana, Nirvana and TestLoopControl say LGPL; Timers says 'n/a'. The 17
+# thorns with their own COPYING carry the same GPL v2 text.
+license = "GPL-2.0-only"
+homepage = "https://github.com/einsteintoolkit/Carpet"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "Carpet"

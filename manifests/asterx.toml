@@ -1,0 +1,20 @@
+# Curated manifest for et/asterx: https://github.com/EinsteinToolkit/AsterX
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+# AsterX is in no Einstein Toolkit release and has no release tags; its one version
+# (2026.5.0) is listed in curate.toml, at the commit et/cottonmouth-stack@2026.5.0 pins.
+format = 1
+
+[package]
+name = "asterx"
+owners = ["et"]
+description = """
+AsterX, a GPU-accelerated GRMHD code for dynamical spacetimes, written in C++ on the CarpetX driver. Heavily derived from the GRMHD code Spritz, it solves the GRMHD equations in 3D Cartesian coordinates with high-resolution shock-capturing schemes in the flux-conservative Valencia formulation and evolves the staggered vector potential directly. Thorns: AsterX (core GRMHD), AsterMasks, AsterSeeds (initial data), AsterUtils, Con2PrimFactory (conservative-to-primitive recovery), EOSX (equation of state), FishboneMoncriefIDX, ID_TabEOS_HydroQuantities, ReconX (reconstruction), TOVSolverX and AsterAnalysis.
+"""
+# license: from the repo's root LICENSE.md at the pinned commit 7e70efa: the GNU LGPL version 3
+# text with no 'or later' grant (the README's badge says 'LGPL v3'), so LGPL-3.0-only for the
+# whole package. Thorns that carry a different license: FishboneMoncriefIDX has its own LICENSE,
+# BSD 2-Clause.
+license = "LGPL-3.0-only"
+homepage = "https://github.com/EinsteinToolkit/AsterX"
+contact = "https://github.com/EinsteinToolkit/AsterX/issues"
+arrangement = "AsterX"

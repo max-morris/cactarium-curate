@@ -1,0 +1,153 @@
+# Curated packages for the Cactarium, for `cactarium curate curate.toml`.
+#
+# One package per Einstein Toolkit repo whose thorns et/carpet-stack, et/carpetx-stack (both
+# tracks) and et/cottonmouth-stack build or fetch, plus AsterX. Left out: the flesh (no thorns)
+# and Cottonmouth (a real package, from its own cactarium.toml). Each manifest is a
+# cactarium.toml as the repo would hold it; these stay curated until the maintainers commit their
+# own. Each manifest carries its release-tag rule (tag-pattern, since): the ET release tags
+# become versions (ET_2026_05_v0 is 2026.5.0), from 2026.5.0 on. AsterX, which has no release
+# tags, has one version given by commit here. Paths are relative to this file.
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/AsterX"
+manifest = "manifests/asterx.toml"
+
+[[package.version]]
+version = "2026.5.0"
+commit = "7e70efa181cec5936be375ae8e7c146aaa3d7085"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/cactuscode/cactusbase.git"
+manifest = "manifests/cactusbase.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/cactuscode/cactusnumerical.git"
+manifest = "manifests/cactusnumerical.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/cactuscode/cactusutils.git"
+manifest = "manifests/cactusutils.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/canuda/canudax.git"
+manifest = "manifests/canudax.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/einsteintoolkit/Carpet.git"
+manifest = "manifests/carpet.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/CarpetX"
+manifest = "manifests/carpetx.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/einsteintoolkit/einsteinanalysis.git"
+manifest = "manifests/einsteinanalysis.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/einsteintoolkit/einsteinbase.git"
+manifest = "manifests/einsteinbase.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/einsteintoolkit/einsteininitialdata.git"
+manifest = "manifests/einsteininitialdata.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-ADIOS2"
+manifest = "manifests/adios2.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-AMReX"
+manifest = "manifests/amrex.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-BLAS"
+manifest = "manifests/blas.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-Boost"
+manifest = "manifests/boost.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-CMake"
+manifest = "manifests/cmake.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-GSL"
+manifest = "manifests/gsl.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-HDF5"
+manifest = "manifests/hdf5.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-hwloc"
+manifest = "manifests/hwloc.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-LAPACK"
+manifest = "manifests/lapack.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-MPI"
+manifest = "manifests/mpi.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-NSIMD"
+manifest = "manifests/nsimd.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-openPMD"
+manifest = "manifests/openpmd.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-PETSc"
+manifest = "manifests/petsc.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-Silo"
+manifest = "manifests/silo.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-yaml_cpp"
+manifest = "manifests/yaml-cpp.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-zlib"
+manifest = "manifests/zlib.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/cactuscode/numerical.git"
+manifest = "manifests/numerical.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/SpacetimeX"
+manifest = "manifests/spacetimex.toml"

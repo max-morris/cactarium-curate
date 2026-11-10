@@ -1,0 +1,22 @@
+# Curated manifest for et/gsl: https://github.com/EinsteinToolkit/ExternalLibraries-GSL
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "gsl"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/GSL, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the GNU Scientific Library; see http://www.gnu.org/software/gsl/."
+"""
+# license: that of the library this thorn builds, GSL 2.8 (dist/gsl-2.8.tar.gz): COPYING is the
+# GNU GPL version 3 text and the source files grant 'version 3 of the License, or (at your
+# option) any later version'. The repo itself has no LICENSE or COPYING file at ET_2026_05_v0.
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-GSL"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["GSL"]

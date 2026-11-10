@@ -1,0 +1,21 @@
+# Curated manifest for et/cactusnumerical: https://bitbucket.org/cactuscode/cactusnumerical
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "cactusnumerical"
+owners = ["et"]
+description = """
+CactusNumerical, the Cactus arrangement of numerical infrastructure: the method of lines (MoL), dissipation, local interpolation and reduction, reflection, rotating and periodic symmetries, slabbing, the space mask, spherical surfaces, summation-by-parts operators and tests.
+"""
+# license: left unset. At ET_2026_05_v0 (334c855), the repo has no LICENSE or COPYING file at
+# its root; 9 of its 22 thorns carry its own: the GNU GPL version 2 text (4); the GNU GPL
+# version 3 text (3); the GNU LGPL version 2.1 text (2); the thorn READMEs say 'GPL', 'GPLv3',
+# 'LGPL', 'LGPLv2.1 or later'; so no single SPDX identifier covers the repo.
+homepage = "https://bitbucket.org/cactuscode/cactusnumerical"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "CactusNumerical"

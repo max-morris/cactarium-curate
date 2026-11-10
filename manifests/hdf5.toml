@@ -1,0 +1,22 @@
+# Curated manifest for et/hdf5: https://github.com/EinsteinToolkit/ExternalLibraries-HDF5
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "hdf5"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/HDF5, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the HDF5 library; see http://www.hdfgroup.org/HDF5/."
+"""
+# license: that of the library this thorn builds, HDF5 1.12.0 (dist/hdf5-1.12.0.tar.gz), whose
+# COPYING is the HDF5 license SPDX lists as HDF5 (COPYING_LBNL_HDF5 covers LBNL contributions).
+# The repo itself has no LICENSE or COPYING file at ET_2026_05_v0.
+license = "HDF5"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-HDF5"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["HDF5"]
