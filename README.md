@@ -1,7 +1,8 @@
 # cactarium-curate
 
-The curated packages of the [Cactarium](https://github.com/max-morris/Cactarium): the `cactarium.toml`
-manifests the Cactarium keeps for repos whose maintainers haven't committed one yet.
+The Cactarium's starting content, kept here by its operators: the curated packages of the
+[Cactarium](https://github.com/max-morris/Cactarium) (the `cactarium.toml` manifests it keeps for repos
+whose maintainers haven't committed one yet), and starter sims.
 
 A curated package is a stopgap. The Cactarium reads the repo's thorns and release tags as usual, but takes
 the package's metadata (name, description, license, contact, how tags become versions) from the manifest
@@ -35,3 +36,18 @@ Send the repo's maintainers its `manifests/<name>.toml` to commit as `cactarium.
 (the name and `owners` must stay as they are). Once it is on the branch their next release is tagged
 from, an admin clicks **Use the repo's manifest** for the package in Admin › Curated. The package keeps
 its name and versions; from then on each release reads the repo's own file.
+
+## Starter sims
+
+`sims/` holds sims published by upload as starting points for new users:
+
+- `sims/wavetoy.sim` publishes as `et/wavetoy`: the Cactus WaveToy demo (CactusWave's WaveToyC with
+  radiative boundaries, on PUGH), one core and seconds to run. A good first `cactup import`.
+
+Publish one, as a member of the owning organization:
+
+```bash
+cactup sim publish sims/wavetoy.sim et/wavetoy
+```
+
+A fix goes out as a new version (`--version 1.0.1`); a version never changes.

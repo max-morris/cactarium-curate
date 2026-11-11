@@ -1,0 +1,171 @@
+format = 1
+
+[sim]
+name = "wavetoy"
+summary = "The Cactus WaveToy demo: a Gaussian pulse of a scalar wave leaving through radiative boundaries (one core, seconds)"
+description = """
+The Cactus WaveToy demo: a scalar wave equation evolved on a uniform grid, starting from a Gaussian
+pulse and leaving through radiative outer boundaries. It runs on one core in seconds, which makes it
+a good first simulation for trying CactUp and the Cactarium: `cactup import et/wavetoy` installs the
+pinned sources, builds Cactus, and creates the simulation; add `--run` to run it right away.
+
+The thorns are CactusWave's WaveToyC and IDScalarWaveC (Gabrielle Allen, Tom Goodale, Werner Benger
+and the Cactus team) on PUGH, with the parameter file WaveToyC/par/wavetoyc_rad.par from that
+repo, on the Einstein Toolkit's ET_2026_05 release.
+
+Output: `phi` along the x axis every 2 iterations (IOASCII 1D) and its norms (IOBasic), for 120
+iterations to t = 18."""
+authors = ["The Cactus team"]
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+root = "Cactus"
+
+[thornlist]
+filename = "wavetoy.th"
+text = """
+# The classic WaveToy demo (CactusWave/WaveToyC, radiative boundaries) on the Einstein Toolkit's
+# ET_2026_05 release line: a real Cactus build for an end-to-end Cactarium import test.
+!CRL_VERSION = 1.0
+
+!DEFINE ROOT = Cactus
+!DEFINE ARR  = $ROOT/arrangements
+!DEFINE ET_RELEASE = ET_2026_05
+
+!TARGET   = $ROOT
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactus.git
+!REPO_BRANCH = $ET_RELEASE
+!NAME     = flesh
+!CHECKOUT = .clang-format CONTRIBUTORS COPYRIGHT doc lib Makefile README.md src
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusbase.git
+!REPO_BRANCH = $ET_RELEASE
+!REPO_PATH= $2
+!CHECKOUT =
+CactusBase/Boundary
+CactusBase/CartGrid3D
+CactusBase/CoordBase
+CactusBase/IOASCII
+CactusBase/IOBasic
+CactusBase/IOUtil
+CactusBase/SymBase
+CactusBase/Time
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactuspugh.git
+!REPO_BRANCH = $ET_RELEASE
+!REPO_PATH= $2
+!CHECKOUT =
+CactusPUGH/PUGH
+CactusPUGH/PUGHReduce
+CactusPUGH/PUGHSlab
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactusnumerical.git
+!REPO_BRANCH = $ET_RELEASE
+!REPO_PATH= $2
+!CHECKOUT =
+CactusNumerical/LocalReduce
+
+!TARGET   = $ARR
+!TYPE     = git
+!URL      = https://bitbucket.org/cactuscode/cactuswave.git
+!REPO_BRANCH = $ET_RELEASE
+!REPO_PATH= $2
+!CHECKOUT =
+CactusWave/IDScalarWaveC
+CactusWave/WaveToyC
+"""
+
+[parfile]
+filename = "wavetoy.par"
+kind = "par"
+text = """
+# wavetoyc_rad.par - wavetoy evolution with radiation boundaries
+# $Id$
+#
+# /*@@
+#   @file      wavetoyc_rad.par
+#   @date      Sunday 24th July
+#   @author    Gabrielle Allen
+#   @desc
+#   Wavetoy parameter file demonstrating radiation boundaries in Octant
+#   @enddesc
+# @@*/          
+
+ActiveThorns = "idscalarwavec localreduce time boundary wavetoyc pugh pughreduce pughslab CartGrid3D CoordBase SymBase ioutil ioascii iobasic"
+ 
+time::dtfac = 0.5
+
+idscalarwave::initial_data = "gaussian"
+idscalarwave::sigma = 2.8
+idscalarwave::radius = 0
+
+wavetoyc::bound = "radiation"
+
+grid::type = "BySpacing"
+grid::domain = "octant"
+grid::dxyz = 0.3
+
+driver::global_nx = 30
+driver::global_ny = 30
+driver::global_nz = 30
+
+cactus::cctk_itlast = 120
+
+IOBasic::outScalar_every = 2
+IOBasic::outScalar_vars = "wavetoy::phi"
+
+IOASCII::out1D_every = 2
+IOASCII::out1D_z = "no"
+IOASCII::out1D_y = "no"
+IOASCII::out1D_vars = "wavetoy::phi "
+
+IOBasic::outInfo_every = 10
+IOBasic::outInfo_vars = "wavetoy::phi"
+ 
+IO::out_dir = "wavetoyc_rad"
+
+"""
+
+[[repo]]
+name = "flesh"
+url = "https://bitbucket.org/cactuscode/cactus.git"
+ref = "ET_2026_05"
+commit = "ae66cd2e788678be490586d191542beb3fb0c6aa"
+
+[[repo]]
+name = "cactusbase"
+url = "https://bitbucket.org/cactuscode/cactusbase.git"
+ref = "ET_2026_05"
+commit = "49a9d71ec54e97eead7b057bae247f734678ce81"
+
+[[repo]]
+name = "cactuspugh"
+url = "https://bitbucket.org/cactuscode/cactuspugh.git"
+ref = "ET_2026_05"
+commit = "a8e3236308f968b2cdf9a91a065ed220ddd6aedb"
+
+[[repo]]
+name = "cactusnumerical"
+url = "https://bitbucket.org/cactuscode/cactusnumerical.git"
+ref = "ET_2026_05"
+commit = "334c855abe8ffbe9f94a5446fe2095ec54d24cf3"
+
+[[repo]]
+name = "cactuswave"
+url = "https://bitbucket.org/cactuscode/cactuswave.git"
+ref = "ET_2026_05"
+commit = "35443f5eb3cd1086ccb6c4548bcced526caded70"
+
+[run]
+tasks = 1
+cpus-per-task = 1
+walltime = "00:10:00"
+
+[provenance]
+exported-by = "cactup 0.1.0 (dev)"
+exported-at = 2026-11-11T02:31:29Z
