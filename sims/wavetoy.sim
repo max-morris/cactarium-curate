@@ -16,6 +16,11 @@ repo, on the Einstein Toolkit's ET_2026_05 release.
 Output: `phi` along the x axis every 2 iterations (IOASCII 1D) and its norms (IOBasic), for 120
 iterations to t = 18."""
 authors = ["The Cactus team"]
+# The license of CactusWave's WaveToyC, whose par/wavetoyc_rad.par this sim carries (its COPYRIGHT
+# file): the GNU GPL, version 2 (the text it attaches), "with the specific exception that the GNU
+# GPL does not migrate to code linking to or using infrastructure from this thorn". SPDX lists no
+# such exception, hence the AdditionRef.
+license = "GPL-2.0-only WITH AdditionRef-Cactus-linking-exception"
 contact = "https://github.com/EinsteinToolkit/tickets/issues"
 root = "Cactus"
 
