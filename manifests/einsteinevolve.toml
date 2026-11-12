@@ -18,32 +18,35 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 # ET_2026_05_v0 (2026.5.0) on.
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
+# Not published, since it can't build: it needs the Refluxing implementation, which nothing in the ET provides.
+exclude-thorns = ["GRHydro_Refluxing"]
 arrangement = "EinsteinEvolve"
 
-# Dependencies, from the CCL of the thorns at 2026.5.0: where each
-# requirement this package does not meet itself comes from. needed-by is left out where
-# every thorn needs it.
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
 
 [[dependency]]
 target = "et/cactusbase"
+needs = ["Boundary", "CartGrid3D", "Fortran"]
 needed-by = ["GRHydro", "GRHydro_InitData", "LegoExcision"]
 
 [[dependency]]
 target = "et/cactusnumerical"
+needs = ["SpaceMask"]
 needed-by = ["GRHydro", "LegoExcision"]
 
 [[dependency]]
 target = "et/einsteinbase"
+needs = ["ADMBase", "HydroBase", "TmunuBase"]
 needed-by = ["GRHydro"]
 
 [[dependency]]
 target = "et/einsteineos"
+needs = ["EOS_Omni"]
 needed-by = ["GRHydro", "GRHydro_InitData"]
 
 [[dependency]]
 target = "et/kranc"
+needs = ["GenericFD"]
 needed-by = ["NewRad"]
-
-# Unclaimed requirements:
-# - Refluxing: no thorn in the ET releases implements it (for GRHydro_Refluxing)
-# - RefluxingRegisterVariable: no thorn in the ET releases provides it (for GRHydro_Refluxing)

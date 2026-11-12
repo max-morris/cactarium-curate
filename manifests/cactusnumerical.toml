@@ -20,12 +20,13 @@ tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "CactusNumerical"
 
-# Dependencies, from the CCL of the thorns at 2026.5.0: where each
-# requirement this package does not meet itself comes from. needed-by is left out where
-# every thorn needs it.
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
 
 [[dependency]]
 target = "et/cactusbase"
+needs = ["Boundary", "CartGrid3D", "CoordBase", "SymBase"]
 needed-by = ["Cartoon2D", "Dissipation", "Noise", "Periodic", "ReflectionSymmetry",
     "RotatingSymmetry180", "RotatingSymmetry90", "SpaceMask", "SphericalSurface",
     "SummationByParts", "TestLocalInterp2", "TestRotatingSymmetry180"]

@@ -20,38 +20,46 @@ tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "CarpetX"
 
-# Dependencies, from the CCL of the thorns at 2026.5.0: where each
-# requirement this package does not meet itself comes from. needed-by is left out where
-# every thorn needs it.
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
 
 [[dependency]]
 target = "et/adios2"
+needs = ["ADIOS2"]
 needed-by = ["ParticlesX"]
 
 [[dependency]]
 target = "et/amrex"
+needs = ["AMReX"]
 needed-by = ["Algo", "CarpetX", "CarpetXRegrid", "Loop", "ODESolvers", "PDESolvers"]
 
 [[dependency]]
 target = "et/boost"
+needs = ["Boost"]
 needed-by = ["Algo"]
 
 [[dependency]]
 target = "et/cactusbase"
+needs = ["IOUtil"]
 needed-by = ["CarpetX"]
 
 [[dependency]]
 target = "et/mpi"
+needs = ["MPI"]
 needed-by = ["CarpetX", "ParticlesX", "PDESolvers"]
 
 [[dependency]]
 target = "et/petsc"
+needs = ["PETSc"]
 needed-by = ["PDESolvers"]
 
 [[dependency]]
 target = "et/yaml-cpp"
+needs = ["yaml_cpp"]
 needed-by = ["CarpetX"]
 
 [[dependency]]
 target = "et/zlib"
+needs = ["zlib"]
 needed-by = ["CarpetX"]

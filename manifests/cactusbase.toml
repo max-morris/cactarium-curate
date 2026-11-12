@@ -19,11 +19,14 @@ tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "CactusBase"
 
-# Dependencies, from the CCL of the thorns at 2026.5.0: where each
-# requirement this package does not meet itself comes from. needed-by is left out where
-# every thorn needs it.
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
 
-# Unclaimed requirements:
-# - Hyperslab_FreeMapping: provided by et/cactuspugh, et/carpet; whichever the installation has (for IOASCII)
-# - Hyperslab_GetList: provided by et/cactuspugh, et/carpet; whichever the installation has (for IOASCII)
-# - Hyperslab_GlobalMappingByIndex: provided by et/cactuspugh, et/carpet; whichever the installation has (for IOASCII)
+[[dependency]]
+any-of = [
+    { target = "et/carpet", needs = ["CarpetSlab"] },
+    { target = "et/cactuspugh", needs = ["PUGHSlab"] },
+]
+needed-by = ["IOASCII"]
+note = "IOASCII works with either driver: Carpet or PUGH."

@@ -22,14 +22,14 @@ contact = "https://github.com/EinsteinToolkit/AsterX/issues"
 # current release, 1.0; the older v0.1.0 doesn't match the pattern and is not a version here.
 tag-pattern = "v{major}.{minor}"
 since = "1.0.0"
+# Not published, since it can't build: it inherits CarpetX, a thorn name that no thorn implements.
+exclude-thorns = ["KHInitial"]
 arrangement = "AsterX"
 
-# Dependencies, from the CCL of the thorns at 1.0.0 (its v1.0 release): where each
-# requirement this package does not meet itself comes from. needed-by is left out where
-# every thorn needs it.
+# Dependencies, from the CCL of the thorns at 1.0.0 (its v1.0 release): for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
 
 [[dependency]]
 target = "et/carpetx"
-
-# Unclaimed requirements:
-# - CarpetX: no thorn implements it (a bug in the requiring thorn: CarpetX is a thorn name, not an implementation) (for KHInitial)
+needs = ["ADMBaseX", "Algo", "CarpetXRegrid", "HydroBaseX", "Loop", "TmunuBaseX"]
