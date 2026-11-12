@@ -1,0 +1,63 @@
+# Curated manifest for et/grhaylet: https://github.com/GRHayL/GRHayLET
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "grhaylet"
+owners = ["et"]
+description = """
+GRHayLET, the Einstein Toolkit thorns that build on the GRHayL library (et/grhayl's GRHayLib), maintained by the GRHayL developers; thorns with an 'X' suffix are the CarpetX variants. GRHayLID and GRHayLIDX set simple initial data, such as the Balsara tests and a constant density sphere; GRHayLHD and GRHayLHDX evolve the GRHD equations with B set to zero; IllinoisGRMHD solves the GRMHD equations, a refactoring of the original IllinoisGRMHD thorn to use GRHayL; NRPyLeakageET (Carpet only) implements a neutrino leakage scheme.
+"""
+# license: left unset. At ET_2026_05_v0 (c189592), the repo has no LICENSE or COPYING file at
+# its root, and none of its 6 thorns carries one; the thorn READMEs say 'BSD-2' (5), but
+# NRPyLeakageET has no README and its sources state no license; so no single SPDX identifier
+# covers the repo.
+homepage = "https://github.com/GRHayL/GRHayLET"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "GRHayLET"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["Boundary", "CartGrid3D"]
+needed-by = ["GRHayLID", "NRPyLeakageET"]
+
+[[dependency]]
+target = "et/cactusnumerical"
+needs = ["SpaceMask"]
+needed-by = ["NRPyLeakageET"]
+
+[[dependency]]
+target = "et/carpet"
+needs = ["Carpet"]
+needed-by = ["NRPyLeakageET"]
+
+[[dependency]]
+target = "et/carpetx"
+needs = ["ADMBaseX", "HydroBaseX", "Loop", "TmunuBaseX"]
+needed-by = ["GRHayLHDX", "GRHayLIDX"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needs = ["ADMBase", "HydroBase", "TmunuBase"]
+needed-by = ["GRHayLHD", "GRHayLID", "IllinoisGRMHD", "NRPyLeakageET"]
+
+[[dependency]]
+target = "et/grhayl"
+needs = ["GRHayLib"]
+
+[[dependency]]
+target = "et/hdf5"
+needs = ["HDF5"]
+
+[[dependency]]
+target = "et/mpi"
+needs = ["MPI"]
+needed-by = ["NRPyLeakageET"]

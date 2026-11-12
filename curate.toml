@@ -4,8 +4,11 @@
 # and et/cottonmouth-stack build or fetch, plus AsterX, and thirteen repos added so that every
 # curated thorn's requirements have a curated provider: cactusconnect, cactuselliptic, cactuspugh,
 # einsteineos, einsteinevolve, einsteinutils, GRHayL, Kranc and the ExternalLibraries FFTW3, LORENE,
-# OpenCL, pthreads and ssht. The flesh is et/cactus, a flesh package (flesh = true) rather than
-# thorns. Left out: Cottonmouth (a real package, from its own cactarium.toml). Each manifest is a
+# OpenCL, pthreads and ssht. Seven more repos are here so that sims built on the Einstein Toolkit's
+# thornlist can be fully specified by packages: cactuswave, mclachlan, wvuthorns,
+# wvuthorns_diagnostics, GRHayLET, and the FUKA thorns KadathImporter and KadathThorn (which also
+# needs the FUKA library's source checked out inside it, at src/fuka, which isn't a thorn). The
+# flesh is et/cactus, a flesh package (flesh = true) rather than thorns. Left out: Cottonmouth (a real package, from its own cactarium.toml). Each manifest is a
 # cactarium.toml as the repo would hold it; these stay curated until the maintainers commit their
 # own. Each manifest carries its release-tag rule (tag-pattern, since): the ET release tags become
 # versions (ET_2026_05_v0 is 2026.5.0), from 2026.5.0 on. AsterX's versions follow its own
@@ -51,6 +54,11 @@ manifest = "manifests/cactuspugh.toml"
 owner = "et"
 url = "https://bitbucket.org/cactuscode/cactusutils.git"
 manifest = "manifests/cactusutils.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/cactuscode/cactuswave.git"
+manifest = "manifests/cactuswave.toml"
 
 [[package]]
 owner = "et"
@@ -213,8 +221,28 @@ manifest = "manifests/grhayl.toml"
 
 [[package]]
 owner = "et"
+url = "https://github.com/GRHayL/GRHayLET.git"
+manifest = "manifests/grhaylet.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/fukaws/KadathImporter"
+manifest = "manifests/kadathimporter.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/fukaws/KadathThorn"
+manifest = "manifests/kadaththorn.toml"
+
+[[package]]
+owner = "et"
 url = "https://github.com/ianhinder/Kranc.git"
 manifest = "manifests/kranc.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/einsteintoolkit/mclachlan.git"
+manifest = "manifests/mclachlan.toml"
 
 [[package]]
 owner = "et"
@@ -225,3 +253,13 @@ manifest = "manifests/numerical.toml"
 owner = "et"
 url = "https://github.com/EinsteinToolkit/SpacetimeX"
 manifest = "manifests/spacetimex.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/zach_etienne/wvuthorns.git"
+manifest = "manifests/wvuthorns.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/zach_etienne/wvuthorns_diagnostics.git"
+manifest = "manifests/wvuthorns-diagnostics.toml"

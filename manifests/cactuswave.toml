@@ -1,0 +1,35 @@
+# Curated manifest for et/cactuswave: https://bitbucket.org/cactuscode/cactuswave
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "cactuswave"
+owners = ["et"]
+description = """
+CactusWave, the Cactus arrangement that demonstrates Cactus with its standard example, the 3D scalar wave equation: the evolver WaveToyC and its equivalents WaveToyCXX, WaveToyF77, WaveToyF90 and WaveToyFreeF90 (C++, Fortran 77, fixed- and free-form Fortran 90), analytic initial data (IDScalarWave, IDScalarWaveC, IDScalarWaveCXX), initial data from an elliptic solve (IDScalarWaveElliptic), a source term from two rotating binary charges (WaveBinarySource) and custom boundary conditions (WaveToyExtra).
+"""
+# license: left unset. At ET_2026_05_v0 (35443f5), the repo has no LICENSE or COPYING file at
+# its root, and none of its 11 thorns carries one; each carries a COPYRIGHT file, the GNU GPL
+# version 2 text with the Cactus exception that the GPL does not migrate to code linking to or
+# using the thorn (which SPDX does not list); the thorn READMEs say 'LGPL'; so no single SPDX
+# identifier covers the repo.
+homepage = "https://bitbucket.org/cactuscode/cactuswave"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "CactusWave"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["Boundary", "CartGrid3D"]
+
+[[dependency]]
+target = "et/cactuselliptic"
+needs = ["EllBase"]
+needed-by = ["IDScalarWaveElliptic"]

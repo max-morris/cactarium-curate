@@ -1,0 +1,53 @@
+# Curated manifest for et/kadaththorn: https://bitbucket.org/fukaws/KadathThorn
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "kadaththorn"
+owners = ["et"]
+description = """
+The Cactus thorn Fuka/KadathThorn (implementation Kadath), which builds the Frankfurt University/KADATH (FUKA) library or uses an installed one (KADATH_DIR), and makes it available to other thorns, such as KadathImporter. FUKA is a collection of initial data solvers and utilities based on the KADATH spectral solver library, for the eXtended Conformal Thin-Sandwich (XCTS) formulation of Einstein's equations, for black holes, neutron stars and their binaries.
+"""
+# license: that of the library this thorn builds, FUKA (the fuka repo at ET_2026_05_v0,
+# 34513e8): COPYING is the GNU GPL version 3 text, its source files grant 'version 3 of the
+# License, or (at your option) any later version', and its README says 'GPLv3+'. The thorn's
+# README says 'GPL'. The repo itself has no LICENSE or COPYING file at ET_2026_05_v0 (6d48c5c).
+license = "GPL-3.0-or-later"
+homepage = "https://bitbucket.org/fukaws/KadathThorn"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+# The repo is itself the thorn; the Einstein Toolkit checks it out as Fuka/KadathThorn
+# (!REPO_PATH = ../$2), though its thornlist leaves the thorn #DISABLED.
+arrangement = "Fuka"
+thorns = ["KadathThorn"]
+# Needs the FUKA library's source, which is not in this repo: the Einstein Toolkit checks out
+# https://bitbucket.org/fukaws/fuka (ET_2026_05_v0, 34513e8) inside the thorn at src/fuka, and
+# src/build.sh builds the library from there unless KADATH_DIR names an installed one. That
+# checkout is not a thorn, so no [[dependency]] can name it.
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/blas"
+needs = ["BLAS"]
+
+[[dependency]]
+target = "et/boost"
+needs = ["Boost"]
+
+[[dependency]]
+target = "et/fftw3"
+needs = ["FFTW3"]
+
+[[dependency]]
+target = "et/gsl"
+needs = ["GSL"]
+
+[[dependency]]
+target = "et/lapack"
+needs = ["LAPACK"]
