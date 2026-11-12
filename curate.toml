@@ -8,17 +8,13 @@
 # its own cactarium.toml). Each manifest is a cactarium.toml as the repo would hold it; these stay
 # curated until the maintainers commit their own. Each manifest carries its release-tag rule
 # (tag-pattern, since): the ET release tags become versions (ET_2026_05_v0 is 2026.5.0), from
-# 2026.5.0 on. AsterX and ssht, which have no release tags, have one version each given by commit
-# here. Paths are relative to this file.
+# 2026.5.0 on. AsterX's versions follow its own v{major}.{minor} tags. ssht, which has no release
+# tags, has one version given by commit here. Paths are relative to this file.
 
 [[package]]
 owner = "et"
 url = "https://github.com/EinsteinToolkit/AsterX"
 manifest = "manifests/asterx.toml"
-
-[[package.version]]
-version = "2026.5.0"
-commit = "7e70efa181cec5936be375ae8e7c146aaa3d7085"
 
 [[package]]
 owner = "et"
