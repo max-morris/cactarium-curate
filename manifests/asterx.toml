@@ -1,6 +1,6 @@
 # Curated manifest for et/asterx: https://github.com/EinsteinToolkit/AsterX
 # Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
-# AsterX is in no Einstein Toolkit release and has no release tags; its one version
+# AsterX is in no Einstein Toolkit release and has no release tags for it; its one version
 # (2026.5.0) is listed in curate.toml, at the commit et/cottonmouth-stack@2026.5.0 pins.
 format = 1
 
@@ -17,6 +17,9 @@ AsterX, a GPU-accelerated GRMHD code for dynamical spacetimes, written in C++ on
 license = "LGPL-3.0-only"
 homepage = "https://github.com/EinsteinToolkit/AsterX"
 contact = "https://github.com/EinsteinToolkit/AsterX/issues"
+# A stopgap: curated support starts with the current release (2026.5.0). The repo's older v0.1.0
+# tag is not a version here.
+since = "2026.5.0"
 arrangement = "AsterX"
 
 # Dependencies, from the CCL of the thorns at 2026.5.0: where each

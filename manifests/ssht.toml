@@ -17,6 +17,9 @@ The Cactus thorn ExternalLibraries/ssht, which builds the library it bundles or 
 license = "GPL-3.0-or-later"
 homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-ssht"
 contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# A stopgap: curated support starts with the current release (2026.5.0); any older version tag
+# the repo gains is not a version here.
+since = "2026.5.0"
 arrangement = "ExternalLibraries"
 thorns = ["ssht"]
 
