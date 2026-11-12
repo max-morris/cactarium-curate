@@ -23,14 +23,19 @@ since = "2026.5.0"
 # (!REPO_PATH = ../$2), though its thornlist leaves the thorn #DISABLED.
 arrangement = "Fuka"
 thorns = ["KadathThorn"]
-# Needs the FUKA library's source, which is not in this repo: the Einstein Toolkit checks out
-# https://bitbucket.org/fukaws/fuka (ET_2026_05_v0, 34513e8) inside the thorn at src/fuka, and
-# src/build.sh builds the library from there unless KADATH_DIR names an installed one. That
-# checkout is not a thorn, so no [[dependency]] can name it.
 
 # Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
 # this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
 # that have it (needed-by, left out when all do).
+
+# The FUKA library's source, which is not in this repo: src/build.sh builds it from src/fuka
+# unless KADATH_DIR names an installed FUKA. et/fuka is a library package (no thorns), so the
+# dependency says where its checkout goes instead of naming thorns; the Einstein Toolkit's
+# thornlist checks it out there too.
+[[dependency]]
+target = "et/fuka"
+into = "src/fuka"
+note = "src/build.sh builds FUKA from src/fuka unless KADATH_DIR names an installed FUKA"
 
 [[dependency]]
 target = "et/blas"
