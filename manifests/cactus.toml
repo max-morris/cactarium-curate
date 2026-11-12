@@ -1,0 +1,22 @@
+# Curated manifest for et/cactus: https://bitbucket.org/cactuscode/cactus
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "cactus"
+owners = ["et"]
+description = """
+The Cactus flesh: the central core of the Cactus framework, which connects application modules (thorns) through an extensible interface and builds them into one executable. Every Cactus configuration, and every sim, is built on a flesh; forks such as a mixed-precision flesh declare [[fork-of]] target = "et/cactus@…".
+"""
+# license: the repo root's COPYRIGHT says the flesh, apart from the Users' and Maintainers' Guides,
+# "is distributed under the GNU library general public license version 2", with that text and no
+# 'or later' grant, at ET_2026_05_v0 (ae66cd2).
+license = "LGPL-2.0-only"
+homepage = "https://bitbucket.org/cactuscode/cactus"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+# The flesh, not thorns: checked out as the Cactus root.
+flesh = true
