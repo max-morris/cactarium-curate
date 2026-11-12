@@ -1,0 +1,38 @@
+# Curated manifest for et/wvuthorns-diagnostics: https://bitbucket.org/zach_etienne/wvuthorns_diagnostics
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "wvuthorns-diagnostics"
+owners = ["et"]
+description = """
+WVUThorns_Diagnostics, diagnostic thorns from West Virginia University for GRMHD and vacuum simulations: VolumeIntegrals_GRMHD and VolumeIntegrals_vacuum (volume integrals over arbitrary "Swiss-cheese"-like topologies, which can also track neutron star centers of mass with Carpet), particle_tracerET (tracer particles moving with the fluid, for drawing magnetic field lines consistently from frame to frame), smallbPoynET (b^i, b^2, the Poynting flux, and -1-u_0 for tracking unbound matter) and Seed_Magnetic_Fields_BNS (Seed_Magnetic_Fields extended to binary neutron stars). The repo also carries parameter files for magnetized and unmagnetized binary neutron star evolutions.
+"""
+# license: from the thorn READMEs at ET_2026_05_v0 (378d2a0): all 5 say 'BSD 2-Clause (FreeBSD
+# license)', so BSD-2-Clause for the whole package. The repo has no LICENSE or COPYING file, at
+# its root or in any thorn, and its sources state no license.
+license = "BSD-2-Clause"
+homepage = "https://bitbucket.org/zach_etienne/wvuthorns_diagnostics"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "WVUThorns_Diagnostics"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["CartGrid3D"]
+
+[[dependency]]
+target = "et/carpet"
+needs = ["CarpetRegrid2"]
+needed-by = ["VolumeIntegrals_GRMHD", "VolumeIntegrals_vacuum"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needs = ["ADMBase", "HydroBase"]

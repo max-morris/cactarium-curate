@@ -1,0 +1,67 @@
+# Curated manifest for et/mclachlan: https://bitbucket.org/einsteintoolkit/mclachlan
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "mclachlan"
+owners = ["et"]
+description = """
+McLachlan, the Einstein Toolkit's free Einstein solver: thorns generated with Kranc from the Mathematica sources in m/, which compile against Kranc's GenericFD. ML_BSSN and ML_CCZ4 evolve Einstein's equations in the BSSN and CCZ4 formulations, each with a helper thorn and a test thorn; ML_ADMConstraints and ML_ADMQuantities compute the ADM constraints and quantities; ML_WaveToy is a scalar wave example. The repo also holds variants from the same sources that the Einstein Toolkit doesn't build: optimized benchmark versions of BSSN (ML_BSSN_bench, ML_BSSN_bench8), BSSN without dissipation (ML_BSSN_ND), without vectorization (ML_BSSN_NV) and with OpenCL (ML_BSSN_CL, ML_WaveToy_CL), and CL_BSSN, ML_ADM, ML_hydro and ML_WaveToyFO.
+"""
+# license: the repo root's COPYING is the GNU GPL version 2 text, and the README grants version
+# 2 "or (at your option) any later version", at ET_2026_05_v0 (5750c75). No thorn carries a
+# license file of its own.
+license = "GPL-2.0-or-later"
+homepage = "https://bitbucket.org/einsteintoolkit/mclachlan"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "McLachlan"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["Boundary", "CartGrid3D"]
+needed-by = ["CL_BSSN", "CL_BSSN_Helper", "ML_ADM", "ML_ADMConstraints", "ML_ADMQuantities",
+    "ML_BSSN", "ML_BSSN_bench", "ML_BSSN_bench8", "ML_BSSN_bench8_Helper",
+    "ML_BSSN_bench_Helper", "ML_BSSN_CL", "ML_BSSN_CL_Helper", "ML_BSSN_Helper",
+    "ML_BSSN_ND", "ML_BSSN_ND_Helper", "ML_BSSN_NV", "ML_BSSN_NV_Helper", "ML_CCZ4",
+    "ML_CCZ4_Helper", "ML_hydro", "ML_WaveToy", "ML_WaveToy_CL", "ML_WaveToyFO"]
+
+[[dependency]]
+target = "et/cactusutils"
+needs = ["OpenCLRunTime", "Vectors"]
+needed-by = ["CL_BSSN", "ML_ADM", "ML_BSSN", "ML_BSSN_bench", "ML_BSSN_bench8", "ML_BSSN_CL",
+    "ML_BSSN_ND", "ML_CCZ4", "ML_WaveToy", "ML_WaveToy_CL"]
+
+[[dependency]]
+target = "et/carpet"
+needs = ["LoopControl"]
+needed-by = ["CL_BSSN", "ML_ADM", "ML_BSSN", "ML_BSSN_bench", "ML_BSSN_bench8", "ML_BSSN_CL",
+    "ML_BSSN_ND", "ML_CCZ4", "ML_WaveToy", "ML_WaveToy_CL"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needs = ["ADMBase", "CoordGauge", "TmunuBase"]
+needed-by = ["CL_BSSN", "CL_BSSN_Helper", "ML_ADM", "ML_ADMConstraints", "ML_ADMQuantities",
+    "ML_BSSN", "ML_BSSN_bench", "ML_BSSN_bench8", "ML_BSSN_bench8_Helper",
+    "ML_BSSN_bench_Helper", "ML_BSSN_CL", "ML_BSSN_CL_Helper", "ML_BSSN_Helper",
+    "ML_BSSN_ND", "ML_BSSN_ND_Helper", "ML_BSSN_NV", "ML_BSSN_NV_Helper", "ML_CCZ4",
+    "ML_CCZ4_Helper"]
+
+[[dependency]]
+target = "et/kranc"
+needs = ["GenericFD"]
+needed-by = ["CL_BSSN", "ML_ADM", "ML_ADMConstraints", "ML_ADMQuantities", "ML_BSSN",
+    "ML_BSSN_bench", "ML_BSSN_bench8", "ML_BSSN_CL", "ML_BSSN_ND", "ML_BSSN_NV", "ML_CCZ4",
+    "ML_hydro", "ML_WaveToy", "ML_WaveToy_CL", "ML_WaveToyFO"]
+
+[[dependency]]
+target = "et/opencl"
+needs = ["OpenCL"]
+needed-by = ["ML_BSSN_CL", "ML_WaveToy_CL"]

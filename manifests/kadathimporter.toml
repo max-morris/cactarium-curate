@@ -1,0 +1,40 @@
+# Curated manifest for et/kadathimporter: https://bitbucket.org/fukaws/KadathImporter
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "kadathimporter"
+owners = ["et"]
+description = """
+The Cactus thorn Fuka/KadathImporter, which imports initial data computed with the Frankfurt University/KADATH (FUKA) initial data codes into the Einstein Toolkit, through FUKA's built-in export routines: binary configurations with black holes or neutron stars, with tabulated or polytropic equations of state. The initial data must be generated beforehand by a separately compiled FUKA; the thorn links against the FUKA library that KadathThorn provides.
+"""
+# license: the repo root's COPYING is the GNU GPL version 3 text with no 'or (at your option)
+# any later version' grant, at ET_2026_05_v0 (53db9d5): no source file carries a license
+# notice and the README says 'GPL', with no version; so GPL-3.0-only.
+license = "GPL-3.0-only"
+homepage = "https://bitbucket.org/fukaws/KadathImporter"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+# The repo is itself the thorn; the Einstein Toolkit checks it out as Fuka/KadathImporter
+# (!REPO_PATH = ../$2), though its thornlist leaves the thorn #DISABLED.
+arrangement = "Fuka"
+thorns = ["KadathImporter"]
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["CartGrid3D"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needs = ["ADMBase", "HydroBase"]
+
+[[dependency]]
+target = "et/kadaththorn"
+needs = ["KadathThorn"]
