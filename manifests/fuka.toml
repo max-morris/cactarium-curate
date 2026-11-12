@@ -1,0 +1,23 @@
+# Curated manifest for et/fuka: https://bitbucket.org/fukaws/fuka
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "fuka"
+owners = ["et"]
+description = """
+The Frankfurt University/KADATH (FUKA) library: initial data solvers and utilities based on the KADATH spectral solver library, for the eXtended Conformal Thin-Sandwich (XCTS) formulation of Einstein's equations, for black holes, neutron stars and their binaries. Not thorns: the thorn Fuka/KadathThorn (et/kadaththorn) builds it from source, with its checkout at KadathThorn's src/fuka.
+"""
+# license: COPYING is the GNU GPL version 3 text, its source files grant 'version 3 of the
+# License, or (at your option) any later version', and its README says 'GPLv3+' (at
+# ET_2026_05_v0, 34513e8).
+license = "GPL-3.0-or-later"
+homepage = "https://bitbucket.org/fukaws/fuka"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# A library that thorns build against: no thorns, nothing checked for CCL. The package using it
+# says where its checkout goes (et/kadaththorn: into = "src/fuka").
+library = true
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
