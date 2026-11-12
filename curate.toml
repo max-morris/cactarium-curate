@@ -231,6 +231,11 @@ manifest = "manifests/kadathimporter.toml"
 
 [[package]]
 owner = "et"
+url = "https://bitbucket.org/fukaws/fuka"
+manifest = "manifests/fuka.toml"
+
+[[package]]
+owner = "et"
 url = "https://bitbucket.org/fukaws/KadathThorn"
 manifest = "manifests/kadaththorn.toml"
 
