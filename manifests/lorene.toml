@@ -1,0 +1,40 @@
+# Curated manifest for et/lorene: https://github.com/EinsteinToolkit/ExternalLibraries-LORENE
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "lorene"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/LORENE, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the LORENE library; see <http://www.lorene.obspm.fr/>." LORENE (Langage Objet pour la RElativité NumériquE) is a set of C++ classes for problems in numerical relativity and computational astrophysics, solving partial differential equations with multi-domain spectral methods.
+"""
+# license: that of the library this thorn builds, LORENE (dist/Lorene.tar.gz, a CVS snapshot
+# its configuration.ccl calls 2014-04-18-ET1): COPYING is the GNU GPL version 2 text; 810 of its
+# source files grant 'version 2 of the License, or (at your option) any later version' and 398
+# grant 'version 2' alone, so GPL-2.0-only for the library as a whole (the thorn's README says
+# 'GPL'). The repo itself has no LICENSE or COPYING file at ET_2026_05_v0 (f8d165f).
+license = "GPL-2.0-only"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-LORENE"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["LORENE"]
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/blas"
+needs = ["BLAS"]
+
+[[dependency]]
+target = "et/gsl"
+needs = ["GSL"]
+
+[[dependency]]
+target = "et/lapack"
+needs = ["LAPACK"]

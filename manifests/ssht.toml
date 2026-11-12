@@ -1,0 +1,32 @@
+# Curated manifest for et/ssht: https://github.com/EinsteinToolkit/ExternalLibraries-ssht
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+# ssht is in no Einstein Toolkit release and has no release tags; its one version (2026.5.0) is
+# listed in curate.toml, at the repo's master head (8d465b6, 2025-04-15).
+format = 1
+
+[package]
+name = "ssht"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/ssht, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the ssht library; see https://github.com/astro-informatics/ssht". SSHT performs fast and exact spin spherical harmonic transforms, based on the sampling theorem on the sphere derived in McEwen & Wiaux (2011).
+"""
+# license: that of the library this thorn builds, SSHT 1.5.1 (dist/ssht-1.5.1.tar): LICENSE is
+# the GNU GPL version 3 text and COPYRIGHT.txt grants 'version 3 of the License, or (at your
+# option) any later version' (the thorn's README says 'GPLv3'). The repo itself has no LICENSE
+# or COPYING file at 8d465b6.
+license = "GPL-3.0-or-later"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-ssht"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# A stopgap: curated support starts with the current release (2026.5.0); any older version tag
+# the repo gains is not a version here.
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["ssht"]
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/fftw3"
+needs = ["FFTW3"]

@@ -20,3 +20,68 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "EinsteinInitialData"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["Boundary", "CartGrid3D", "Fortran", "IOUtil"]
+needed-by = ["DistortedBHIVP", "Exact", "Hydro_InitExcision", "Hydro_RNSID", "IDAnalyticBH",
+    "IDAxiBrillBH", "IDAxiOddBrillBH", "IDBrillData", "IDConstraintViolate", "IDFileADM",
+    "IDLinearWaves", "Meudon_Bin_BH", "Meudon_Bin_NS", "Meudon_Mag_NS", "NoExcision",
+    "ReadInterpolate", "RotatingDBHIVP", "TOVola", "TOVSolver", "TwoPunctures"]
+
+[[dependency]]
+target = "et/cactuselliptic"
+needs = ["EllBase"]
+needed-by = ["IDBrillData"]
+
+[[dependency]]
+target = "et/cactusnumerical"
+needs = ["SpaceMask", "SummationByParts"]
+needed-by = ["Hydro_InitExcision", "Hydro_RNSID", "Meudon_Bin_BH", "Meudon_Bin_NS", "TOVSolver"]
+
+[[dependency]]
+target = "et/carpet"
+needs = ["Carpet"]
+needed-by = ["ReadInterpolate"]
+
+[[dependency]]
+target = "et/carpetx"
+needs = ["ADMBaseX", "CoordinatesX"]
+needed-by = ["TwoPuncturesX"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needs = ["ADMBase", "Constants", "CoordGauge", "EOS_Base", "HydroBase", "StaticConformal"]
+needed-by = ["DistortedBHIVP", "Exact", "Hydro_InitExcision", "Hydro_RNSID", "IDAnalyticBH",
+    "IDAxiBrillBH", "IDAxiOddBrillBH", "IDBrillData", "IDConstraintViolate", "IDFileADM",
+    "IDLinearWaves", "Meudon_Bin_BH", "Meudon_Bin_NS", "Meudon_Mag_NS", "NoExcision",
+    "RotatingDBHIVP", "TOVola", "TOVSolver", "TwoPunctures"]
+
+[[dependency]]
+target = "et/grhayl"
+needs = ["GRHayLib"]
+needed-by = ["TOVola"]
+
+[[dependency]]
+target = "et/gsl"
+needs = ["GSL"]
+needed-by = ["TOVola", "TwoPunctures", "TwoPuncturesX"]
+
+[[dependency]]
+target = "et/hdf5"
+needs = ["HDF5"]
+needed-by = ["Hydro_RNSID", "ReadInterpolate", "TOVola"]
+
+[[dependency]]
+target = "et/lorene"
+needs = ["LORENE"]
+needed-by = ["Meudon_Bin_BH", "Meudon_Bin_NS", "Meudon_Mag_NS"]
+
+[[dependency]]
+target = "et/cactusnumerical"
+needs = ["SphericalSurface"]
+needed-by = ["NoExcision"]

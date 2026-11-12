@@ -1,0 +1,44 @@
+# Curated manifest for et/einsteinutils: https://bitbucket.org/einsteintoolkit/einsteinutils
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "einsteinutils"
+owners = ["et"]
+description = """
+EinsteinUtils, the Einstein Toolkit arrangement of utility thorns: SetMask_SphericalSurface (sets a mask, such as the excision mask, from spherical surfaces like those an apparent horizon finder stores) and TGRtensor (generic tensor operations).
+"""
+# license: left unset. At ET_2026_05_v0 (01d568f), the repo has no LICENSE or COPYING file at
+# its root; 1 of its 2 thorns carries its own: the GNU GPL version 2 text (1); the thorn READMEs
+# say 'GPLv2+'; so no single SPDX identifier covers the repo.
+homepage = "https://bitbucket.org/einsteintoolkit/einsteinutils"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "EinsteinUtils"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusnumerical"
+needs = ["SphericalSurface"]
+needed-by = ["SetMask_SphericalSurface"]
+
+[[dependency]]
+target = "et/carpet"
+needs = ["LoopControl"]
+needed-by = ["SetMask_SphericalSurface"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needs = ["HydroBase"]
+needed-by = ["SetMask_SphericalSurface"]
+
+[[dependency]]
+target = "et/lapack"
+needs = ["LAPACK"]
+needed-by = ["TGRtensor"]

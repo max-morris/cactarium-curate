@@ -1,0 +1,21 @@
+# Curated manifest for et/opencl: https://github.com/EinsteinToolkit/ExternalLibraries-OpenCL
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "opencl"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/OpenCL, which finds an installed OpenCL implementation (it bundles none) and makes it available to other thorns, and prints the OpenCL system information at startup. From its README: "Configure with OpenCL; see <http://www.khronos.org/opencl/>."
+"""
+# license: left unset. The thorn bundles no library, and at ET_2026_05_v0 (acf722d) the repo has
+# no LICENSE or COPYING file; its README says 'GPL, public domain', and src/err_code.c and
+# src/device_info.c say 'public domain'; so no single SPDX identifier covers the repo.
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-OpenCL"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["OpenCL"]

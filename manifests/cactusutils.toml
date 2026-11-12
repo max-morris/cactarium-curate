@@ -19,3 +19,45 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "CactusUtils"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["IOUtil"]
+needed-by = ["TimerReport", "Trigger"]
+
+[[dependency]]
+target = "et/carpet"
+needs = ["Carpet"]
+needed-by = ["Accelerator", "OpenCLRunTime"]
+
+[[dependency]]
+target = "et/hwloc"
+needs = ["hwloc"]
+needed-by = ["SystemTopology"]
+
+[[dependency]]
+target = "et/mpi"
+needs = ["MPI"]
+needed-by = ["SystemTopology"]
+
+[[dependency]]
+target = "et/opencl"
+needs = ["OpenCL"]
+needed-by = ["OpenCLRunTime"]
+
+[[dependency]]
+target = "et/pthreads"
+needs = ["pthreads"]
+needed-by = ["WatchDog"]
+
+[[dependency]]
+any-of = [
+    { target = "et/carpet", needs = ["CarpetReduce"] },
+    { target = "et/cactuspugh", needs = ["PUGHReduce"] },
+]
+needed-by = ["NaNChecker"]
+note = "NaNChecker works with either driver: Carpet or PUGH."

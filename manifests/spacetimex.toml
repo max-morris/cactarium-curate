@@ -20,3 +20,50 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "SpacetimeX"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/amrex"
+needs = ["AMReX"]
+needed-by = ["Punctures"]
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["IOUtil"]
+needed-by = ["AHFinderDirect", "Multipole"]
+
+[[dependency]]
+target = "et/carpetx"
+needs = ["ADMBaseX", "Arith", "BoxInBox", "CarpetX", "CarpetXRegrid", "CoordinatesX", "Loop",
+    "TmunuBaseX"]
+needed-by = ["AHFinderDirect", "AHFinderX", "BrillLindquist", "KerrSchildX", "Multipole", "NewRadX",
+    "Punctures", "PunctureTracker", "SphericalHarmonics", "SphericalSurface",
+    "StaticTrumpet", "TestNewRadX", "TwoPuncturesX", "Weyl", "WeylScal4", "Z4c"]
+
+[[dependency]]
+target = "et/gsl"
+needs = ["GSL"]
+needed-by = ["TwoPuncturesX"]
+
+[[dependency]]
+target = "et/hdf5"
+needs = ["HDF5"]
+needed-by = ["SphericalHarmonics"]
+
+[[dependency]]
+target = "et/mpi"
+needs = ["MPI"]
+needed-by = ["PunctureTracker"]
+
+[[dependency]]
+target = "et/ssht"
+needs = ["ssht"]
+needed-by = ["AHFinderX", "SphericalHarmonics"]
+
+[[dependency]]
+target = "et/carpetx"
+needs = ["CarpetX"]
+needed-by = ["AHFinderDirect", "AHFinderX", "Multipole", "PunctureTracker"]

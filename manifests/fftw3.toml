@@ -1,0 +1,22 @@
+# Curated manifest for et/fftw3: https://github.com/EinsteinToolkit/ExternalLibraries-FFTW3
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "fftw3"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/FFTW3, which builds the library it bundles or uses an installed one and makes it available to other thorns. From its README: "Distribute the FFTW Library; see <http://www.fftw.org/>." FFTW computes discrete Fourier transforms in one or more dimensions, of arbitrary size, for real and complex data.
+"""
+# license: that of the library this thorn builds, FFTW 3.3.10 (dist/fftw-3.3.10.tar.gz), whose
+# COPYRIGHT grants the GNU GPL version 2 or (at your option) any later version. The thorn README
+# says 'GPL'. The repo itself has no LICENSE or COPYING file at ET_2026_05_v0 (6567c52).
+license = "GPL-2.0-or-later"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-FFTW3"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["FFTW3"]

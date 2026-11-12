@@ -18,3 +18,12 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "EinsteinBase"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["CartGrid3D", "CoordBase", "InitBase"]
+needed-by = ["ADMBase", "HydroBase", "StaticConformal"]

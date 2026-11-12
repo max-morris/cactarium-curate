@@ -1,7 +1,8 @@
 # Curated manifest for et/asterx: https://github.com/EinsteinToolkit/AsterX
 # Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
-# AsterX is in no Einstein Toolkit release and has no release tags; its one version
-# (2026.5.0) is listed in curate.toml, at the commit et/cottonmouth-stack@2026.5.0 pins.
+# AsterX is in no Einstein Toolkit release. Its versions follow its own two-part release tags
+# (v1.0 is 1.0.0); et/cottonmouth-stack@2026.5.0 pins a later development commit, which is
+# et/asterx#7e70efa rather than a version.
 format = 1
 
 [package]
@@ -17,4 +18,18 @@ AsterX, a GPU-accelerated GRMHD code for dynamical spacetimes, written in C++ on
 license = "LGPL-3.0-only"
 homepage = "https://github.com/EinsteinToolkit/AsterX"
 contact = "https://github.com/EinsteinToolkit/AsterX/issues"
+# Release tags: AsterX tags v{major}.{minor} (v1.0). A stopgap: curated support starts with its
+# current release, 1.0; the older v0.1.0 doesn't match the pattern and is not a version here.
+tag-pattern = "v{major}.{minor}"
+since = "1.0.0"
+# Not published, since it can't build: it inherits CarpetX, a thorn name that no thorn implements.
+exclude-thorns = ["KHInitial"]
 arrangement = "AsterX"
+
+# Dependencies, from the CCL of the thorns at 1.0.0 (its v1.0 release): for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/carpetx"
+needs = ["ADMBaseX", "Algo", "CarpetXRegrid", "HydroBaseX", "Loop", "TmunuBaseX"]

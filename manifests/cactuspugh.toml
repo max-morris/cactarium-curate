@@ -1,0 +1,22 @@
+# Curated manifest for et/cactuspugh: https://bitbucket.org/cactuscode/cactuspugh
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "cactuspugh"
+owners = ["et"]
+description = """
+CactusPUGH, the Cactus arrangement of PUGH, the unigrid parallel driver with MPI, and its companions: PUGHInterp (the flesh's grid-array interpolation API), PUGHReduce (reduction operators) and PUGHSlab (the hyperslab API).
+"""
+# license: left unset. At ET_2026_05_v0 (a8e3236), the repo has no LICENSE or COPYING file at
+# its root, and none of its 4 thorns carries one; each carries a COPYRIGHT file, the GNU GPL
+# version 2 text with the Cactus exception that the GPL does not migrate to code linking to or
+# using the thorn (which SPDX does not list); the thorn READMEs say 'LGPL'; so no single SPDX
+# identifier covers the repo.
+homepage = "https://bitbucket.org/cactuscode/cactuspugh"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "CactusPUGH"

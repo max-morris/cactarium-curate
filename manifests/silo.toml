@@ -20,3 +20,11 @@ tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "ExternalLibraries"
 thorns = ["Silo"]
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/hdf5"
+needs = ["HDF5"]

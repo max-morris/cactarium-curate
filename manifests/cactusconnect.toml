@@ -1,0 +1,31 @@
+# Curated manifest for et/cactusconnect: https://bitbucket.org/cactuscode/cactusconnect
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "cactusconnect"
+owners = ["et"]
+description = """
+CactusConnect, the Cactus arrangement for talking to a running simulation over the network: HTTPD (a web server thorn, with an interface for other thorns to register pages and for steering parameters), HTTPDExtra (additional pages for that server) and Socket (platform-independent socket calls).
+"""
+# license: left unset. At ET_2026_05_v0 (7a208b0), the repo has no LICENSE or COPYING file at
+# its root, and none of its 3 thorns carries one; each carries a COPYRIGHT file, the GNU GPL
+# version 2 text with the Cactus exception that the GPL does not migrate to code linking to or
+# using the thorn (which SPDX does not list); the thorn READMEs say 'LGPL'; so no single SPDX
+# identifier covers the repo.
+homepage = "https://bitbucket.org/cactuscode/cactusconnect"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "CactusConnect"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["IOUtil"]
+needed-by = ["HTTPDExtra"]

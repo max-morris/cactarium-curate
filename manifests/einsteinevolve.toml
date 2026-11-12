@@ -1,0 +1,52 @@
+# Curated manifest for et/einsteinevolve: https://bitbucket.org/einsteintoolkit/einsteinevolve
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "einsteinevolve"
+owners = ["et"]
+description = """
+EinsteinEvolve, the Einstein Toolkit arrangement of evolution thorns: GRHydro (a general-purpose 3D relativistic hydrodynamics code on MoL and the CactusEOS interface), GRHydro_InitData (simple initial data such as shock tubes), GRHydro_Refluxing (hydro fluxes for refluxing), NewRad (the radiative boundary conditions known from BSSN_MoL) and LegoExcision (excision by a mask, with a boundary condition on its edges).
+"""
+# license: left unset. At ET_2026_05_v0 (25f1178), the repo has no LICENSE or COPYING file at
+# its root; 3 of its 5 thorns carry their own: a notice granting the GNU GPL version 2 or later
+# (2); the GNU GPL version 2 text (1); the thorn READMEs say 'GPL', 'GPLv2+'; so no single SPDX
+# identifier covers the repo.
+homepage = "https://bitbucket.org/einsteintoolkit/einsteinevolve"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+# Not published, since it can't build: it needs the Refluxing implementation, which nothing in the ET provides.
+exclude-thorns = ["GRHydro_Refluxing"]
+arrangement = "EinsteinEvolve"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: for each requirement
+# this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
+# that have it (needed-by, left out when all do).
+
+[[dependency]]
+target = "et/cactusbase"
+needs = ["Boundary", "CartGrid3D", "Fortran"]
+needed-by = ["GRHydro", "GRHydro_InitData", "LegoExcision"]
+
+[[dependency]]
+target = "et/cactusnumerical"
+needs = ["SpaceMask"]
+needed-by = ["GRHydro", "LegoExcision"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needs = ["ADMBase", "HydroBase", "TmunuBase"]
+needed-by = ["GRHydro"]
+
+[[dependency]]
+target = "et/einsteineos"
+needs = ["EOS_Omni"]
+needed-by = ["GRHydro", "GRHydro_InitData"]
+
+[[dependency]]
+target = "et/kranc"
+needs = ["GenericFD"]
+needed-by = ["NewRad"]
