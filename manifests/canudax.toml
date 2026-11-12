@@ -17,3 +17,10 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "CanudaX"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/carpetx"

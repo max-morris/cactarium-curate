@@ -20,3 +20,56 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "EinsteinInitialData"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/cactusbase"
+needed-by = ["DistortedBHIVP", "Exact", "Hydro_InitExcision", "Hydro_RNSID", "IDAnalyticBH",
+    "IDAxiBrillBH", "IDAxiOddBrillBH", "IDBrillData", "IDConstraintViolate", "IDFileADM",
+    "IDLinearWaves", "Meudon_Bin_BH", "Meudon_Bin_NS", "Meudon_Mag_NS", "NoExcision",
+    "ReadInterpolate", "RotatingDBHIVP", "TOVola", "TOVSolver", "TwoPunctures"]
+
+[[dependency]]
+target = "et/cactuselliptic"
+needed-by = ["IDBrillData"]
+
+[[dependency]]
+target = "et/cactusnumerical"
+needed-by = ["Hydro_InitExcision", "Hydro_RNSID", "Meudon_Bin_BH", "Meudon_Bin_NS", "TOVSolver"]
+
+[[dependency]]
+target = "et/carpet"
+needed-by = ["ReadInterpolate"]
+
+[[dependency]]
+target = "et/carpetx"
+needed-by = ["TwoPuncturesX"]
+
+[[dependency]]
+target = "et/einsteinbase"
+needed-by = ["DistortedBHIVP", "Exact", "Hydro_InitExcision", "Hydro_RNSID", "IDAnalyticBH",
+    "IDAxiBrillBH", "IDAxiOddBrillBH", "IDBrillData", "IDConstraintViolate", "IDFileADM",
+    "IDLinearWaves", "Meudon_Bin_BH", "Meudon_Bin_NS", "Meudon_Mag_NS", "NoExcision",
+    "RotatingDBHIVP", "TOVola", "TOVSolver", "TwoPunctures"]
+
+[[dependency]]
+target = "et/grhayl"
+needed-by = ["TOVola"]
+
+[[dependency]]
+target = "et/gsl"
+needed-by = ["TOVola", "TwoPunctures", "TwoPuncturesX"]
+
+[[dependency]]
+target = "et/hdf5"
+needed-by = ["Hydro_RNSID", "ReadInterpolate", "TOVola"]
+
+[[dependency]]
+target = "et/lorene"
+needed-by = ["Meudon_Bin_BH", "Meudon_Bin_NS", "Meudon_Mag_NS"]
+
+# Unclaimed requirements:
+# - SphericalSurface: the official stacks differ (et/cactusnumerical in et/et-stack; et/spacetimex in et/cottonmouth-stack) (for NoExcision)

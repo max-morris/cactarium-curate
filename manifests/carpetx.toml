@@ -19,3 +19,39 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "CarpetX"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/adios2"
+needed-by = ["ParticlesX"]
+
+[[dependency]]
+target = "et/amrex"
+needed-by = ["Algo", "CarpetX", "CarpetXRegrid", "Loop", "ODESolvers", "PDESolvers"]
+
+[[dependency]]
+target = "et/boost"
+needed-by = ["Algo"]
+
+[[dependency]]
+target = "et/cactusbase"
+needed-by = ["CarpetX"]
+
+[[dependency]]
+target = "et/mpi"
+needed-by = ["CarpetX", "ParticlesX", "PDESolvers"]
+
+[[dependency]]
+target = "et/petsc"
+needed-by = ["PDESolvers"]
+
+[[dependency]]
+target = "et/yaml-cpp"
+needed-by = ["CarpetX"]
+
+[[dependency]]
+target = "et/zlib"
+needed-by = ["CarpetX"]

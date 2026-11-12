@@ -1,12 +1,15 @@
 # Curated packages for the Cactarium, for `cactarium curate curate.toml`.
 #
-# One package per Einstein Toolkit repo whose thorns et/carpet-stack, et/carpetx-stack (both
-# tracks) and et/cottonmouth-stack build or fetch, plus AsterX. Left out: the flesh (no thorns)
-# and Cottonmouth (a real package, from its own cactarium.toml). Each manifest is a
-# cactarium.toml as the repo would hold it; these stay curated until the maintainers commit their
-# own. Each manifest carries its release-tag rule (tag-pattern, since): the ET release tags
-# become versions (ET_2026_05_v0 is 2026.5.0), from 2026.5.0 on. AsterX, which has no release
-# tags, has one version given by commit here. Paths are relative to this file.
+# One package per Einstein Toolkit repo whose thorns et/carpet-stack, et/carpetx-stack (both tracks)
+# and et/cottonmouth-stack build or fetch, plus AsterX, and thirteen repos added so that every
+# curated thorn's requirements have a curated provider: cactusconnect, cactuselliptic, cactuspugh,
+# einsteineos, einsteinevolve, einsteinutils, GRHayL, Kranc and the ExternalLibraries FFTW3, LORENE,
+# OpenCL, pthreads and ssht. Left out: the flesh (no thorns) and Cottonmouth (a real package, from
+# its own cactarium.toml). Each manifest is a cactarium.toml as the repo would hold it; these stay
+# curated until the maintainers commit their own. Each manifest carries its release-tag rule
+# (tag-pattern, since): the ET release tags become versions (ET_2026_05_v0 is 2026.5.0), from
+# 2026.5.0 on. AsterX and ssht, which have no release tags, have one version each given by commit
+# here. Paths are relative to this file.
 
 [[package]]
 owner = "et"
@@ -24,8 +27,23 @@ manifest = "manifests/cactusbase.toml"
 
 [[package]]
 owner = "et"
+url = "https://bitbucket.org/cactuscode/cactusconnect.git"
+manifest = "manifests/cactusconnect.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/cactuscode/cactuselliptic.git"
+manifest = "manifests/cactuselliptic.toml"
+
+[[package]]
+owner = "et"
 url = "https://bitbucket.org/cactuscode/cactusnumerical.git"
 manifest = "manifests/cactusnumerical.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/cactuscode/cactuspugh.git"
+manifest = "manifests/cactuspugh.toml"
 
 [[package]]
 owner = "et"
@@ -59,8 +77,23 @@ manifest = "manifests/einsteinbase.toml"
 
 [[package]]
 owner = "et"
+url = "https://bitbucket.org/einsteintoolkit/einsteineos.git"
+manifest = "manifests/einsteineos.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/einsteintoolkit/einsteinevolve.git"
+manifest = "manifests/einsteinevolve.toml"
+
+[[package]]
+owner = "et"
 url = "https://bitbucket.org/einsteintoolkit/einsteininitialdata.git"
 manifest = "manifests/einsteininitialdata.toml"
+
+[[package]]
+owner = "et"
+url = "https://bitbucket.org/einsteintoolkit/einsteinutils.git"
+manifest = "manifests/einsteinutils.toml"
 
 [[package]]
 owner = "et"
@@ -89,6 +122,11 @@ manifest = "manifests/cmake.toml"
 
 [[package]]
 owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-FFTW3"
+manifest = "manifests/fftw3.toml"
+
+[[package]]
+owner = "et"
 url = "https://github.com/EinsteinToolkit/ExternalLibraries-GSL"
 manifest = "manifests/gsl.toml"
 
@@ -109,6 +147,11 @@ manifest = "manifests/lapack.toml"
 
 [[package]]
 owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-LORENE"
+manifest = "manifests/lorene.toml"
+
+[[package]]
+owner = "et"
 url = "https://github.com/EinsteinToolkit/ExternalLibraries-MPI"
 manifest = "manifests/mpi.toml"
 
@@ -116,6 +159,11 @@ manifest = "manifests/mpi.toml"
 owner = "et"
 url = "https://github.com/EinsteinToolkit/ExternalLibraries-NSIMD"
 manifest = "manifests/nsimd.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-OpenCL"
+manifest = "manifests/opencl.toml"
 
 [[package]]
 owner = "et"
@@ -129,8 +177,22 @@ manifest = "manifests/petsc.toml"
 
 [[package]]
 owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-pthreads"
+manifest = "manifests/pthreads.toml"
+
+[[package]]
+owner = "et"
 url = "https://github.com/EinsteinToolkit/ExternalLibraries-Silo"
 manifest = "manifests/silo.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/EinsteinToolkit/ExternalLibraries-ssht"
+manifest = "manifests/ssht.toml"
+
+[[package.version]]
+version = "2026.5.0"
+commit = "8d465b66382f97a7d205b0d6f8ef0710ef822424"
 
 [[package]]
 owner = "et"
@@ -141,6 +203,16 @@ manifest = "manifests/yaml-cpp.toml"
 owner = "et"
 url = "https://github.com/EinsteinToolkit/ExternalLibraries-zlib"
 manifest = "manifests/zlib.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/GRHayL/GRHayL.git"
+manifest = "manifests/grhayl.toml"
+
+[[package]]
+owner = "et"
+url = "https://github.com/ianhinder/Kranc.git"
+manifest = "manifests/kranc.toml"
 
 [[package]]
 owner = "et"

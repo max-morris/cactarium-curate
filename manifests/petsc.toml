@@ -20,3 +20,16 @@ tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "ExternalLibraries"
 thorns = ["PETSc"]
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/blas"
+
+[[dependency]]
+target = "et/lapack"
+
+[[dependency]]
+target = "et/mpi"

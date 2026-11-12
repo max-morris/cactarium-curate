@@ -1,0 +1,32 @@
+# Curated manifest for et/einsteineos: https://bitbucket.org/einsteintoolkit/einsteineos
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "einsteineos"
+owners = ["et"]
+description = """
+EinsteinEOS, the Einstein Toolkit arrangement of equations of state: EOS_Omni (a one-fits-all handler for polytropic, gamma-law, hybrid and finite-temperature microphysical EOSs), and EOS_Hybrid, EOS_IdealFluid and EOS_Polytrope, which work through the CactusEOS interface.
+"""
+# license: left unset. At ET_2026_05_v0 (58fbce8), the repo has no LICENSE or COPYING file at
+# its root, and none of its 4 thorns carries one; the thorn READMEs say 'LGPL', with no version;
+# so no single SPDX identifier covers the repo.
+homepage = "https://bitbucket.org/einsteintoolkit/einsteineos"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "EinsteinEOS"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/einsteinbase"
+needed-by = ["EOS_Hybrid", "EOS_IdealFluid", "EOS_Polytrope"]
+
+[[dependency]]
+target = "et/hdf5"
+needed-by = ["EOS_Omni"]

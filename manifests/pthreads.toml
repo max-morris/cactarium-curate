@@ -1,0 +1,21 @@
+# Curated manifest for et/pthreads: https://github.com/EinsteinToolkit/ExternalLibraries-pthreads
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "pthreads"
+owners = ["et"]
+description = """
+The Cactus thorn ExternalLibraries/pthreads, which makes the system's POSIX threads library available to other thorns. From its README: "Provide access to the POSIX threads libraries. This thorn does not actually provide the library it only offers a convenient way to include it in a Cactus configuration."
+"""
+# license: from the thorn's README at ET_2026_05_v0 (554c0bb), which says 'MIT'. The thorn
+# bundles no library, and the repo has no LICENSE or COPYING file.
+license = "MIT"
+homepage = "https://github.com/EinsteinToolkit/ExternalLibraries-pthreads"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "ExternalLibraries"
+thorns = ["pthreads"]

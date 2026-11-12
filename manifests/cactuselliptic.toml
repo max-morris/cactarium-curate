@@ -1,0 +1,41 @@
+# Curated manifest for et/cactuselliptic: https://bitbucket.org/cactuscode/cactuselliptic
+# Kept on the Cactarium until the repo's maintainers commit their own cactarium.toml.
+format = 1
+
+[package]
+name = "cactuselliptic"
+owners = ["et"]
+description = """
+CactusElliptic, the Cactus arrangement of elliptic solvers: EllBase (the elliptic solver interface), EllSOR (basic SOR solvers, written to be robust and pedagogical rather than fast), TATelliptic (a generic interface to nonlinear elliptic solvers), and EllPETSc and TATPETSc (solvers through PETSc).
+"""
+# license: left unset. At ET_2026_05_v0 (5934bfb), the repo has no LICENSE or COPYING file at
+# its root; 2 of its 5 thorns carry their own: the GNU GPL version 2 text (2); the other 3 carry
+# a COPYRIGHT file, the GNU GPL version 2 text with the Cactus exception that the GPL does not
+# migrate to code linking to or using the thorn (which SPDX does not list); the thorn READMEs
+# say 'LGPL'; so no single SPDX identifier covers the repo.
+homepage = "https://bitbucket.org/cactuscode/cactuselliptic"
+contact = "https://github.com/EinsteinToolkit/tickets/issues"
+# Release tags: the Einstein Toolkit's ET_YYYY_MM_vN tags are versions YYYY.M.N, from
+# ET_2026_05_v0 (2026.5.0) on.
+tag-pattern = "ET_{major}_{minor}_v{patch}"
+since = "2026.5.0"
+arrangement = "CactusElliptic"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/cactusbase"
+needed-by = ["EllSOR"]
+
+[[dependency]]
+target = "et/cactuspugh"
+needed-by = ["EllPETSc"]
+
+[[dependency]]
+target = "et/petsc"
+needed-by = ["EllPETSc", "TATPETSc"]
+
+# Unclaimed requirements:
+# - driver: provided by et/cactuspugh, et/carpet, et/carpetx; whichever the installation has (for EllPETSc)

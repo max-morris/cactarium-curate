@@ -20,3 +20,40 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "SpacetimeX"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/amrex"
+needed-by = ["Punctures"]
+
+[[dependency]]
+target = "et/cactusbase"
+needed-by = ["AHFinderDirect", "Multipole"]
+
+[[dependency]]
+target = "et/carpetx"
+needed-by = ["AHFinderDirect", "AHFinderX", "BrillLindquist", "KerrSchildX", "Multipole", "NewRadX",
+    "Punctures", "PunctureTracker", "SphericalHarmonics", "SphericalSurface",
+    "StaticTrumpet", "TestNewRadX", "TwoPuncturesX", "Weyl", "WeylScal4", "Z4c"]
+
+[[dependency]]
+target = "et/gsl"
+needed-by = ["TwoPuncturesX"]
+
+[[dependency]]
+target = "et/hdf5"
+needed-by = ["SphericalHarmonics"]
+
+[[dependency]]
+target = "et/mpi"
+needed-by = ["PunctureTracker"]
+
+[[dependency]]
+target = "et/ssht"
+needed-by = ["AHFinderX", "SphericalHarmonics"]
+
+# Unclaimed requirements:
+# - DriverInterpolate: the official stacks differ (et/cactuspugh, et/carpet, et/carpetx in et/et-stack; et/carpetx in et/cottonmouth-stack; et/carpetx in et/carpetx-stack (extra)) (for AHFinderX)

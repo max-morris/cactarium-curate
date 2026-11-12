@@ -19,3 +19,34 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "CactusUtils"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/cactusbase"
+needed-by = ["TimerReport", "Trigger"]
+
+[[dependency]]
+target = "et/carpet"
+needed-by = ["Accelerator", "OpenCLRunTime"]
+
+[[dependency]]
+target = "et/hwloc"
+needed-by = ["SystemTopology"]
+
+[[dependency]]
+target = "et/mpi"
+needed-by = ["SystemTopology"]
+
+[[dependency]]
+target = "et/opencl"
+needed-by = ["OpenCLRunTime"]
+
+[[dependency]]
+target = "et/pthreads"
+needed-by = ["WatchDog"]
+
+# Unclaimed requirements:
+# - Reduce: provided by et/cactuspugh, et/carpet; whichever the installation has (for NaNChecker)

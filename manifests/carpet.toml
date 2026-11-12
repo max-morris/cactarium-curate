@@ -21,3 +21,51 @@ contact = "https://github.com/EinsteinToolkit/tickets/issues"
 tag-pattern = "ET_{major}_{minor}_v{patch}"
 since = "2026.5.0"
 arrangement = "Carpet"
+
+# Dependencies, from the CCL of the thorns at 2026.5.0: where each
+# requirement this package does not meet itself comes from. needed-by is left out where
+# every thorn needs it.
+
+[[dependency]]
+target = "et/cactusbase"
+needed-by = ["AMRToy", "Carpet", "CarpetIntegrateTest", "CarpetIOASCII", "CarpetIOBasic",
+    "CarpetIOF5", "CarpetIOF5_standalone", "CarpetIOHDF5", "CarpetIONirvana",
+    "CarpetIOScalar", "CarpetIOStreamedHDF5", "CarpetLib", "CarpetMask", "CarpetMG",
+    "CarpetPETSc", "CarpetProlongateTest", "CarpetReduce", "CarpetRegridTest",
+    "LoopControl", "PeriodicCarpet", "ReductionTest", "ReductionTest3", "Requirements",
+    "TestLoopControl", "Timers"]
+
+[[dependency]]
+target = "et/cactusconnect"
+needed-by = ["CarpetIOStreamedHDF5"]
+
+[[dependency]]
+target = "et/cactuselliptic"
+needed-by = ["CarpetCG", "CarpetJacobi", "CarpetMG"]
+
+[[dependency]]
+target = "et/cactusnumerical"
+needed-by = ["CarpetEvolutionMask", "CarpetMask", "CarpetTracker"]
+
+[[dependency]]
+target = "et/cactusutils"
+needed-by = ["CarpetLib"]
+
+[[dependency]]
+target = "et/einsteinevolve"
+needed-by = ["ReductionTest"]
+
+[[dependency]]
+target = "et/hdf5"
+needed-by = ["CarpetIOF5", "CarpetIOF5_standalone", "CarpetIOHDF5", "CarpetIONirvana", "Nirvana"]
+
+[[dependency]]
+target = "et/mpi"
+needed-by = ["Carpet", "CarpetInterp", "CarpetLib", "CarpetReduce"]
+
+[[dependency]]
+target = "et/petsc"
+needed-by = ["CarpetPETSc"]
+
+# Unclaimed requirements:
+# - F5: no public thorn provides it (CarpetIOF5 is not built by the ET) (for CarpetIOF5, CarpetIOF5_standalone)
