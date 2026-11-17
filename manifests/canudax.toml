@@ -25,3 +25,9 @@ arrangement = "CanudaX"
 [[dependency]]
 target = "et/carpetx"
 needs = ["ADMBaseX", "CarpetXRegrid", "Loop", "TmunuBaseX"]
+
+# Not in the CCL: CanudaX_BSSNMoL includes NewRadX's newradx.hxx unconditionally.
+[[dependency]]
+target = "et/spacetimex"
+needs = ["NewRadX"]
+needed-by = ["CanudaX_BSSNMoL"]

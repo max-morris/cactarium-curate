@@ -31,10 +31,11 @@ target = "et/cactusbase"
 needs = ["Boundary", "CartGrid3D", "Fortran"]
 needed-by = ["GRHydro", "GRHydro_InitData", "LegoExcision"]
 
+# GRHydro_InitData's need is not in its CCL: it includes SpaceMask's SpaceMask.h unconditionally.
 [[dependency]]
 target = "et/cactusnumerical"
 needs = ["SpaceMask"]
-needed-by = ["GRHydro", "LegoExcision"]
+needed-by = ["GRHydro", "GRHydro_InitData", "LegoExcision"]
 
 [[dependency]]
 target = "et/einsteinbase"
