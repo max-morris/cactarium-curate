@@ -40,9 +40,10 @@ target = "et/cactusnumerical"
 needs = ["MoL", "SpaceMask"]
 needed-by = ["Baikal", "BaikalVacuum", "GiRaFFE", "GiRaFFEfood", "ID_converter_GiRaFFE"]
 
+# CoordGauge is not in the CCL: Baikal and BaikalVacuum include its Slicing.h unconditionally.
 [[dependency]]
 target = "et/einsteinbase"
-needs = ["ADMBase", "HydroBase", "TmunuBase"]
+needs = ["ADMBase", "CoordGauge", "HydroBase", "TmunuBase"]
 needed-by = ["Baikal", "BaikalVacuum", "FishboneMoncriefID", "GiRaFFE", "GiRaFFE_to_HydroBase",
     "GiRaFFEfood", "ID_converter_GiRaFFE", "Seed_Magnetic_Fields", "ShiftedKerrSchild"]
 

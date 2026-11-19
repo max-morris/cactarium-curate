@@ -26,6 +26,7 @@ root = "Auxiliary/Cactus"
 # this package doesn't meet itself, the package and thorns that meet it (needs), and the thorns
 # that have it (needed-by, left out when all do).
 
+# CartGrid3D is not in the CCL: GenericFD includes its Symmetry.h unconditionally.
 [[dependency]]
 target = "et/cactusbase"
-needs = ["SymBase"]
+needs = ["CartGrid3D", "SymBase"]
